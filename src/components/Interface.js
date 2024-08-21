@@ -16,13 +16,13 @@ const Interface = () => {
 
     return (
         <div>
-            <input value={FirstName} type="text" placeholder='Enter First Name'
+            <input data-testid="input1" value={FirstName} type="text" placeholder='Enter First Name'
                 onChange={(e) => setFirstName(e.target.value)}
             />
-            <input value={SecondName} type="text" placeholder='Enter Second Name'
+            <input data-testid="input2" value={SecondName} type="text" placeholder='Enter Second Name'
                 onChange={(e) => setSecondName(e.target.value)}
             />
-            <button style={{ color: "lightblue" }}
+            <button data-testid="calculate_relationship" style={{ color: "lightblue" }}
                 onClick={() => {
                     let result = "";
                     let arr1 = FirstName.split("");
@@ -40,14 +40,15 @@ const Interface = () => {
                     setFinalResult(result)
                 }}
             >Calculate Reletionship Future</button>
-            <button style={{ color: "lightblue" }}
+            <button data-testid="clear" style={{ color: "lightblue" }}
                 onClick={() => {
                     setFirstName("");
                     setSecondName("");
+                    setFinalResult("");
                 }}
             >Clear</button>
 
-            <h3>{finalResult}</h3>
+            <h3 data-testid="answer">{finalResult}</h3>
         </div>
     )
 }
