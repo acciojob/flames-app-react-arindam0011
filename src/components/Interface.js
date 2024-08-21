@@ -32,8 +32,8 @@ const Interface = () => {
                     arr1.forEach(char => {
                         const index = arr2.indexOf(char);
                         if (index !== -1) {
-                            arr1.replace(char, ''); 
-                            arr2.replace(arr2[index], '');
+                            char=''; 
+                            arr2[index] = '';
                           length-=2;
                         }
                       });
