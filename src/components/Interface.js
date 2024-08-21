@@ -16,10 +16,10 @@ const Interface = () => {
 
     return (
         <div>
-            <input data-testid="input1" value={FirstName} type="text" placeholder='Enter First Name'
+            <input name="name1" data-testid="input1" value={FirstName} type="text" placeholder='Enter First Name'
                 onChange={(e) => setFirstName(e.target.value)}
             />
-            <input data-testid="input2" value={SecondName} type="text" placeholder='Enter Second Name'
+            <input name="name2" data-testid="input2" value={SecondName} type="text" placeholder='Enter Second Name'
                 onChange={(e) => setSecondName(e.target.value)}
             />
             <button data-testid="calculate_relationship" style={{ color: "lightblue" }}
