@@ -6,12 +6,12 @@ const Interface = () => {
 
 
     const relationshipValues = [
-        'Siblings', // index 0
-        'Friends',  // index 1
-        'Love',     // index 2
-        'Affection',// index 3
-        'Marriage', // index 4
-        'Enemy'     // index 5
+        'Siblings', 
+        'Friends',  
+        'Love',     
+        'Affection',
+        'Marriage',
+        'Enemy' 
       ];
 
     return (
@@ -27,15 +27,17 @@ const Interface = () => {
                     let result = "";
                     let arr1 = FirstName.split("");
                     let arr2 = SecondName.split("");
+                    let length=arr1.length+arr2.length;
 
                     arr1.forEach(char => {
                         const index = arr2.indexOf(char);
                         if (index !== -1) {
-                          arr1 = arr1.filter(c => c !== char);
-                          arr2 = arr2.filter(c => c !== char);
+                            arr1.replace(char, ''); 
+                            arr2.replace(arr2[index], '');
+                          length-=2;
                         }
                       });
-                    result = relationshipValues[(arr1.length + arr2.length) % 6];
+                    result = relationshipValues[length % 6];
 
                     setFinalResult(result)
                 }}
